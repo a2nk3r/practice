@@ -1,3 +1,5 @@
+// recurrence relation: C(0) = 1; C(n+1) = sum(i=0 to n)(C(i)C(n-i))
+
 #include<iostream>
 using namespace std;
 int main(){
