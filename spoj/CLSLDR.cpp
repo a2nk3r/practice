@@ -56,12 +56,26 @@ int main(){
         for(int i = 1;i < m;i++)
             curr = curr->next;
         printList(head);
-        do{
-            for(int i = 1;i < o;i++)
-                curr = curr->next;
-            deleteNode(&head, curr);
+        Node* temp1 = curr;
+        Node* temp2 = curr;
+        while(temp1->next != temp1){
+            int count = 0;
+            while(count != o){
+                temp2 = temp1;
+                temp1 = temp1->next;
+                count++;
+            }
+            temp2->next = temp1->next;
+            temp1 = temp2->next;
             printList(head);
-        }while(head->next != head);
+        }
+        // do{
+        //     for(int i = 1;i < o;i++)
+        //         curr = curr->next;
+        //     deleteNode(&head, curr);
+        //     printList(head);
+        // }while(head->next != head);
+        cout << temp1->data << endl;
         
     }
     
